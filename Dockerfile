@@ -1,4 +1,4 @@
-FROM python:3.8
+ARG PYTHON_VERSION=3.8
 FROM python:${PYTHON_VERSION} as builder
 
 WORKDIR /app

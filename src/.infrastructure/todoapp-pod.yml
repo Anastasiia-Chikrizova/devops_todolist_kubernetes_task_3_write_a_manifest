@@ -11,3 +11,15 @@ spec:
       image: kulyk404/kub2py
       ports:
         - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        initialDelaySeconds: 10
+        periodSeconds: 5
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 5
+        periodSeconds: 5
